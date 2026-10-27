@@ -1,0 +1,351 @@
+/* ==========================================================================
+   FOREST DEW UDAWALAWA — RESPONSIVE ADAPTATIONS
+   Tested across 375px, 390px, 768px, 1024px, 1440px
+   ========================================================================== */
+
+/* Large Desktop (> 1280px) */
+@media (min-width: 1440px) {
+  :root {
+    --site-width: 1400px;
+  }
+}
+
+/* Laptops & Standard Desktops (1024px - 1279px) */
+@media (max-width: 1279px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+  
+  .booking-form-grid {
+    grid-template-columns: repeat(2, 1fr) repeat(2, 1fr);
+  }
+  
+  .booking-form-grid .booking-submit-btn {
+    grid-column: span 4;
+  }
+  
+  .safari-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .footer-top-grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (max-width: 1023px) {
+  .desktop-nav,
+  .header-actions .header-phone {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .hero-meta-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .hero-meta-divider {
+    display: none;
+  }
+  
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .story-badge-card {
+    position: static;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+  
+  .room-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .pool-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .pool-visual-frame img {
+    height: 440px;
+  }
+  
+  .safari-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .dining-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .dining-sub-img-card {
+    position: static;
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    border: none;
+  }
+  
+  .gallery-mosaic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallery-mosaic-item.wide {
+    grid-column: span 1;
+  }
+  
+  .destination-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .cta-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cta-banner-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .cta-banner-actions .btn {
+    width: 100%;
+  }
+  
+  .planner-builder-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .planner-summary-sticky {
+    position: static;
+    margin-top: 40px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .footer-brand-col {
+    grid-column: span 2;
+  }
+}
+
+/* Small Tablets & Large Smartphones (580px - 767px) */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 74px; /* Space for mobile sticky reservation dock */
+  }
+  
+  .mobile-sticky-dock {
+    display: block;
+  }
+  
+  .floating-wa-btn {
+    bottom: 86px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .site-header {
+    padding: 16px 0;
+  }
+  
+  .header-actions .header-cta {
+    display: none;
+  }
+  
+  .hero-cinematic {
+    min-height: auto;
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+  
+  .hero-meta-panel {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .booking-bar-wrapper {
+    margin-top: 0;
+  }
+  
+  .booking-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-form-grid .booking-submit-btn {
+    grid-column: span 1;
+    width: 100%;
+  }
+  
+  .section-header-editorial {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .section-header-col-right {
+    align-items: flex-start;
+  }
+  
+  .room-card-img-wrap {
+    height: 280px;
+  }
+  
+  .room-card-rate-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .room-card-actions {
+    width: 100%;
+  }
+  
+  .room-card-actions .btn {
+    width: 100%;
+  }
+  
+  .safari-hero-banner {
+    height: 340px;
+  }
+  
+  .safari-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .party-btn-group {
+    width: 100%;
+  }
+  
+  .party-btn {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .safari-radio-group {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-mosaic-item {
+    height: 280px;
+  }
+  
+  .gallery-mosaic-item.wide {
+    grid-column: span 1;
+  }
+  
+  .destination-stats-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .footer-brand-col {
+    grid-column: span 1;
+  }
+  
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .rate-matrix-card {
+    padding: 16px;
+  }
+  
+  .rate-table th,
+  .rate-table td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .rate-table td strong {
+    font-size: 1rem;
+  }
+}
+
+/* Small Smartphones (375px - 480px) */
+@media (max-width: 480px) {
+  .display-1 {
+    font-size: 2.6rem;
+  }
+  
+  .display-2 {
+    font-size: 2.1rem;
+  }
+  
+  .display-3 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-title {
+    font-size: 2.7rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+  }
+  
+  .hero-meta-panel {
+    padding: 20px;
+  }
+  
+  .booking-bar {
+    padding: 18px;
+  }
+  
+  .meal-plan-pills {
+    grid-template-columns: 1fr;
+  }
+  
+  .story-pillars {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .lightbox-modal {
+    padding: 16px;
+  }
+}
