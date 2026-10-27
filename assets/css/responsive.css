@@ -1,16 +1,34 @@
 /* ==========================================================================
-   FOREST DEW UDAWALAWA — RESPONSIVE ADAPTATIONS
-   Tested across 375px, 390px, 768px, 1024px, 1440px
+   FOREST DEW UDAWALAWA — COMPREHENSIVE RESPONSIVE STYLES
+   Engineered for zero-overflow perfection across all mobile devices:
+   320px (SE), 360px, 375px/390px (iPhone), 412px/414px (Galaxy/Plus),
+   768px/820px (iPad/Tablet), 1024px (iPad Pro), 1280px - 1440px+ (Desktop)
    ========================================================================== */
 
-/* Large Desktop (> 1280px) */
+/* Universal Mobile Viewport & Overflow Protection */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  width: 100%;
+}
+
+/* Accessible Close State for Mobile Drawer Toggle */
+.menu-toggle.is-active span {
+  background-color: #F3F0E9 !important;
+}
+
+/* ==========================================================================
+   LARGE DESKTOP (> 1440px)
+   ========================================================================== */
 @media (min-width: 1440px) {
   :root {
     --site-width: 1400px;
   }
 }
 
-/* Laptops & Standard Desktops (1024px - 1279px) */
+/* ==========================================================================
+   LAPTOPS & STANDARD DESKTOPS (1024px - 1279px)
+   ========================================================================== */
 @media (max-width: 1279px) {
   .hero-grid {
     grid-template-columns: 1.15fr 0.85fr;
@@ -34,7 +52,9 @@
   }
 }
 
-/* Tablets (768px - 1023px) */
+/* ==========================================================================
+   TABLETS & MEDIUM SCREENS (768px - 1023px)
+   ========================================================================== */
 @media (max-width: 1023px) {
   .desktop-nav,
   .header-actions .header-phone {
@@ -74,6 +94,15 @@
   .room-showcase-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .room-card-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .room-card-horizontal .room-card-img-wrap {
+    height: 320px;
+    min-height: 320px;
   }
   
   .pool-grid {
@@ -153,35 +182,96 @@
   }
 }
 
-/* Small Tablets & Large Smartphones (580px - 767px) */
+/* ==========================================================================
+   MEDIUM TABLET TO PHONE INTERMEDIATE (768px - 900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .room-card-horizontal {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .room-card-horizontal .room-card-img-wrap {
+    height: 260px !important;
+    min-height: 260px !important;
+    width: 100% !important;
+  }
+
+  .meal-key-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .amenities-4col-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .about-pillars-box {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 20px;
+  }
+}
+
+/* ==========================================================================
+   SMARTPHONES & MOBILE BROWSERS (≤ 767px)
+   ========================================================================== */
 @media (max-width: 767px) {
+  /* Safe area padding for mobile navigation dock */
   body {
-    padding-bottom: 74px; /* Space for mobile sticky reservation dock */
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
   }
   
   .mobile-sticky-dock {
     display: block;
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 12px));
+    z-index: 800;
   }
   
+  /* Hide luxury concierge floating pill on mobile to prevent obstruction of forms and buttons */
+  .luxury-concierge-pill {
+    display: none !important;
+  }
+  
+  /* Float WA Button comfortably above the mobile sticky reservation dock */
   .floating-wa-btn {
-    bottom: 86px;
-    right: 20px;
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    right: 18px;
     width: 48px;
     height: 48px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   }
   
   .site-header {
-    padding: 16px 0;
+    padding: 14px 0;
   }
   
   .header-actions .header-cta {
     display: none;
   }
   
+  /* Mobile Drawer Smooth Full Viewport */
+  .mobile-drawer {
+    padding: 85px 24px calc(24px + env(safe-area-inset-bottom, 20px));
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .mobile-drawer-link {
+    font-size: clamp(1.65rem, 6.5vw, 2.3rem);
+    padding-bottom: 10px;
+  }
+  
+  .mobile-drawer-footer {
+    margin-top: 20px;
+    padding-top: 18px;
+  }
+
+  /* Cinematic Hero Mobile Height & Proportions */
   .hero-cinematic {
     min-height: auto;
-    padding-top: 110px;
-    padding-bottom: 60px;
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
   
   .hero-meta-panel {
@@ -205,17 +295,30 @@
   .section-header-editorial {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 16px;
   }
   
   .section-header-col-right {
     align-items: flex-start;
   }
   
-  .room-card-img-wrap {
-    height: 280px;
+  /* Stacked Room Cards */
+  .room-card-horizontal {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .room-card-img-wrap,
+  .room-card-horizontal .room-card-img-wrap {
+    height: 240px !important;
+    min-height: 240px !important;
+    width: 100% !important;
   }
   
+  .room-card-body {
+    padding: 22px 18px;
+  }
+
   .room-card-rate-row {
     flex-direction: column;
     align-items: flex-start;
@@ -229,9 +332,16 @@
   .room-card-actions .btn {
     width: 100%;
   }
+
+  .room-features-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
   
+  /* Safari Presentation on Mobile */
   .safari-hero-banner {
-    height: 340px;
+    height: 320px;
   }
   
   .safari-toolbar {
@@ -247,18 +357,49 @@
   .party-btn {
     flex: 1;
     text-align: center;
+    padding: 10px 14px;
   }
   
   .safari-radio-group {
     grid-template-columns: 1fr;
   }
+
+  .safari-card {
+    padding: 26px 20px;
+  }
   
+  /* Gallery Horizontal Swipe Toolbar */
+  .gallery-filter-toolbar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    padding: 4px 16px 12px 16px !important;
+    margin-left: -16px;
+    margin-right: -16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .gallery-filter-toolbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .gallery-filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.7rem;
+  }
+
   .gallery-mosaic-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   
   .gallery-mosaic-item {
-    height: 280px;
+    height: 260px;
   }
   
   .gallery-mosaic-item.wide {
@@ -267,12 +408,13 @@
   
   .destination-stats-row {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
   
+  /* Footer Mobile */
   .footer-top-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
   
   .footer-brand-col {
@@ -285,8 +427,16 @@
     gap: 16px;
   }
   
+  /* Smooth Touch-Scrollable Room Rates Matrix with Sticky Room Column */
   .rate-matrix-card {
-    padding: 16px;
+    padding: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-sm);
+  }
+  
+  .rate-table {
+    min-width: 500px;
   }
   
   .rate-table th,
@@ -296,44 +446,148 @@
   }
   
   .rate-table td strong {
-    font-size: 1rem;
+    font-size: 0.98rem;
+  }
+
+  .rate-table th:first-child,
+  .rate-table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: var(--bg-surface);
+    z-index: 2;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .rate-table thead th:first-child {
+    background-color: var(--bg-surface-alt);
+    z-index: 3;
+  }
+
+  .meal-key-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 }
 
-/* Small Smartphones (375px - 480px) */
+/* ==========================================================================
+   FORM & INTERACTIVE ESTIMATOR STACKING (≤ 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .planner-step-card [style*="grid-template-columns: repeat(2, 1fr)"],
+  .contact-form-panel [style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .calc-output-display {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .calc-output-display .btn {
+    width: 100%;
+  }
+
+  /* Hero Atmosphere 3-Image Button Bar */
+  .hero-scene-nav {
+    margin-top: 14px;
+  }
+
+  .hero-scene-btns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .hero-scene-btn {
+    padding: 8px 4px;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+  }
+  
+  .hero-scene-btn span {
+    font-size: 0.58rem;
+  }
+}
+
+/* ==========================================================================
+   SMARTPHONES (≤ 480px)
+   ========================================================================== */
 @media (max-width: 480px) {
   .display-1 {
-    font-size: 2.6rem;
+    font-size: 2.35rem;
+    line-height: 1.15;
   }
   
   .display-2 {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
+    line-height: 1.2;
   }
   
   .display-3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .page-hero-title {
+    font-size: 2.35rem;
+    line-height: 1.15;
   }
   
   .hero-title {
-    font-size: 2.7rem;
+    font-size: 2.45rem;
+    line-height: 1.12;
+  }
+  
+  .hero-lead,
+  .page-hero-lead {
+    font-size: 0.95rem;
   }
   
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
+    gap: 12px;
   }
   
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
   }
   
   .hero-meta-panel {
-    padding: 20px;
+    padding: 18px 16px;
   }
   
   .booking-bar {
-    padding: 18px;
+    padding: 16px 14px;
+  }
+
+  .room-features-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .meal-key-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .amenities-4col-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .room-card-horizontal .room-card-img-wrap {
+    height: 210px !important;
+    min-height: 210px !important;
   }
   
   .meal-plan-pills {
@@ -342,10 +596,88 @@
   
   .story-pillars {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
   
   .lightbox-modal {
-    padding: 16px;
+    padding: 14px;
+  }
+
+  .lightbox-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+  
+  .lightbox-prev {
+    left: 8px;
+  }
+  
+  .lightbox-next {
+    right: 8px;
+  }
+}
+
+/* ==========================================================================
+   EXTRA-COMPACT SMARTPHONES (≤ 360px)
+   e.g. iPhone SE 1st/2nd Gen, Galaxy A-series mini
+   ========================================================================== */
+@media (max-width: 360px) {
+  .container {
+    width: calc(100% - 22px);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .display-1 {
+    font-size: 2rem;
+  }
+
+  .display-2 {
+    font-size: 1.65rem;
+  }
+
+  .display-3 {
+    font-size: 1.35rem;
+  }
+
+  .page-hero-title {
+    font-size: 2rem;
+  }
+
+  .room-plan-pills-row {
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .room-plan-pill {
+    padding: 6px 3px;
+    font-size: 0.68rem;
+  }
+
+  .hero-scene-btns {
+    gap: 4px;
+  }
+
+  .hero-scene-btn {
+    font-size: 0.58rem;
+    padding: 6px 2px;
+  }
+
+  .mobile-dock-grid {
+    gap: 8px;
+  }
+
+  .mobile-dock-grid .btn {
+    padding: 12px 6px;
+    font-size: 0.72rem;
+  }
+
+  .rate-matrix-card {
+    padding: 10px 8px;
   }
 }

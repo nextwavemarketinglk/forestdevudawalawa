@@ -162,8 +162,8 @@
 
         <div style="display: flex; flex-direction: column; gap: 60px;">
           <!-- 01: Single Room -->
-          <article class="room-card card-light-beam reveal-fade-up" id="single" data-room-key="single" style="display: grid; grid-template-columns: 1.1fr 1fr;">
-            <div class="room-card-img-wrap" style="height: 100%; min-height: 380px;">
+          <article class="room-card room-card-horizontal card-light-beam reveal-fade-up" id="single" data-room-key="single">
+            <div class="room-card-img-wrap">
               <img src="assets/images/guest-room-forest.webp" alt="Single Room at Forest Dew Udawalawa with outdoor outlook" loading="lazy">
               <span class="room-card-tag">Real Hotel Photo</span>
             </div>
@@ -173,7 +173,7 @@
               <p class="room-card-desc">
                 An intimate and tranquil retreat designed for independent travelers, solo nature enthusiasts, and safari photographers. Clean, peaceful surroundings guarantee restorative sleep after dawn game drives.
               </p>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); font-size: 0.82rem; color: var(--text-muted);">
+              <div class="room-features-grid">
                 <div>✓ Garden &amp; forest breeze</div>
                 <div>✓ Private en-suite bathroom</div>
                 <div>✓ Fresh linen &amp; towels</div>
@@ -200,8 +200,8 @@
           </article>
 
           <!-- 02: Double Room -->
-          <article class="room-card card-light-beam reveal-fade-up" id="double" data-room-key="double" style="display: grid; grid-template-columns: 1.1fr 1fr;">
-            <div class="room-card-img-wrap" style="height: 100%; min-height: 380px;">
+          <article class="room-card room-card-horizontal card-light-beam reveal-fade-up" id="double" data-room-key="double">
+            <div class="room-card-img-wrap">
               <img src="assets/images/guest-room-wide.webp" alt="Double Room at Forest Dew with natural illumination" loading="lazy">
               <span class="room-card-tag">Real Hotel Photo</span>
             </div>
@@ -211,7 +211,7 @@
               <p class="room-card-desc">
                 Generously proportioned bedroom with dual beds, ample natural light, and garden-facing doors. Curated for couples and traveling partners seeking unhurried calm and restorative comfort.
               </p>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); font-size: 0.82rem; color: var(--text-muted);">
+              <div class="room-features-grid">
                 <div>✓ Generous natural light</div>
                 <div>✓ Dual comfortable beds</div>
                 <div>✓ Garden terrace outlook</div>
@@ -238,8 +238,8 @@
           </article>
 
           <!-- 03: Triple Room -->
-          <article class="room-card card-light-beam reveal-fade-up" id="triple" data-room-key="triple" style="display: grid; grid-template-columns: 1.1fr 1fr;">
-            <div class="room-card-img-wrap" style="height: 100%; min-height: 380px;">
+          <article class="room-card room-card-horizontal card-light-beam reveal-fade-up" id="triple" data-room-key="triple">
+            <div class="room-card-img-wrap">
               <img src="assets/images/guest-room-lounge.webp" alt="Triple Room at Forest Dew with spacious seating" loading="lazy">
               <span class="room-card-tag">Real Hotel Photo</span>
             </div>
@@ -249,7 +249,7 @@
               <p class="room-card-desc">
                 Ideal accommodation for companions and small travel groups exploring southern Sri Lanka together. Generous footprint with comfortable seating amenities, allowing everyone room to unpack and relax.
               </p>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); font-size: 0.82rem; color: var(--text-muted);">
+              <div class="room-features-grid">
                 <div>✓ Accommodates 3 guests</div>
                 <div>✓ In-room lounge furniture</div>
                 <div>✓ Peaceful green surrounds</div>
@@ -276,8 +276,8 @@
           </article>
 
           <!-- 04: Family Room -->
-          <article class="room-card card-light-beam reveal-fade-up" id="family" data-room-key="family" style="display: grid; grid-template-columns: 1.1fr 1fr;">
-            <div class="room-card-img-wrap" style="height: 100%; min-height: 380px;">
+          <article class="room-card room-card-horizontal card-light-beam reveal-fade-up" id="family" data-room-key="family">
+            <div class="room-card-img-wrap">
               <img src="assets/images/guest-room-forest.webp" alt="Family Room at Forest Dew with generous layout" loading="lazy">
               <span class="room-card-tag">Real Hotel Photo</span>
             </div>
@@ -287,7 +287,7 @@
               <p class="room-card-desc">
                 Designed to comfortably accommodate families visiting the elephant sanctuary of Udawalawe. Ample space for parents and children, secure surroundings, and seamless access to on-site dining and swimming pool.
               </p>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); font-size: 0.82rem; color: var(--text-muted);">
+              <div class="room-features-grid">
                 <div>✓ Family-friendly dimensions</div>
                 <div>✓ Multiple sleeping arrangements</div>
                 <div>✓ Easy pool &amp; dining access</div>
@@ -381,7 +381,7 @@
           </table>
         </div>
 
-        <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; font-size: 0.82rem; color: var(--text-muted);" class="reveal-fade-up">
+        <div class="meal-key-grid reveal-fade-up">
           <div><strong style="color: var(--graphite);">R/O (Room Only):</strong> Accommodation without meal services included.</div>
           <div><strong style="color: var(--graphite);">B/B (Bed &amp; Breakfast):</strong> Includes cooked morning breakfast for registered guests.</div>
           <div><strong style="color: var(--graphite);">H/B (Half Board):</strong> Includes morning breakfast and evening dinner.</div>
@@ -405,7 +405,7 @@
           </div>
 
           <form id="room-rate-calculator" novalidate>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+            <div class="form-grid-2col">
               <div class="form-field">
                 <label class="form-label" for="calc-room">Room Category</label>
                 <select id="calc-room" name="room" class="form-select">
@@ -426,7 +426,7 @@
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 24px;">
+            <div class="form-grid-2col">
               <div class="form-field">
                 <label class="form-label" for="calc-checkin">Check-in Date</label>
                 <input type="date" id="calc-checkin" name="checkin" class="form-input" required>
